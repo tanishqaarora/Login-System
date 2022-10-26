@@ -1,19 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= title %></title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/style.css">
-</head>
-<body>
+    
+    <%- include('header') -%>
+
+
     <div class="text-center center-div" id="login">
         <div class="container w-25 border py-5">
             <div class="title">
                 <h2 class="font-weight-bond">Login System</h2>
                 <span id="login-user">Log in for the existing user</span>
+                <% if(locals.logout){ %>
+                    <div class="alter alert-success text-center">
+                        <%= logout %>
+                    </div>
+                    <% }%>
             </div>
             <form action="/route/login" method="POST" class="pt-3">
                 <div class="form-group">
@@ -27,5 +25,5 @@
             </form>
         </div>
     </div>
-</body>
-</html>
+
+    <%- include('footer') -%>
