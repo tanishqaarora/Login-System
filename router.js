@@ -17,7 +17,7 @@ router.post('/login', (req, res)=>{
     }
 });
 
-//dashboard route
+//route for dashboard
 router.get('/dashboard', (req, res)=>{
     if(req.session.user){
         res.render('dashboard', {user: req.session.user});
